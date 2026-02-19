@@ -128,3 +128,23 @@ if (btnEn) {
     // Implementar cambio de idioma aquí
   });
 }
+
+// Función para proteger y mostrar teléfonos
+document.addEventListener("DOMContentLoaded", () => {
+  // Datos fragmentados (Seguridad)
+  const cod = "+502";
+  const cel = "55635698";
+  const fijo = "77712902";
+
+  // Inyectar Celular
+  const celCont = document.getElementById('cel-container');
+  if(celCont) {
+    celCont.innerHTML = `📱 <a href="tel:${cod}${cel}" style="text-decoration:none; color:inherit;">${cod} ${cel.slice(0,4)} ${cel.slice(4)}</a>`;
+  }
+
+  // Inyectar Teléfono Fijo
+  const telCont = document.getElementById('tel-container');
+  if(telCont) {
+    telCont.innerHTML = `☎️ <a href="tel:${fijo}" style="text-decoration:none; color:inherit;">${fijo.slice(0,4)}-${fijo.slice(4)}</a>`;
+  }
+});
