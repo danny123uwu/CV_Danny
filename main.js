@@ -69,7 +69,7 @@ Este mensaje fue enviado desde tu currículum web.
         from_email: email,
         empresa: empresa,
         message: mensaje,
-        to_email: 'justin2266xd@gmail.com'
+        to_email: 'justin2266xd@gmail.com'|
       }
     );
     
@@ -80,12 +80,13 @@ Este mensaje fue enviado desde tu currículum web.
   }
   */
   
-  // Método 2: Usar mailto (más simple, abre el cliente de correo)
-  const mailtoLink = `mailto:justin2266xd@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
-  
-  // Abrir cliente de correo
-  window.location.href = mailtoLink;
-  
+ // Método 2: Usar mailto (más simple, abre el cliente de correo)
+const mailtoLink = `mailto:justin2266xd@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+
+// Abrir cliente de correo
+window.open(mailtoLink, "_blank");
+
+
   // Mostrar mensaje de confirmación
   setTimeout(() => {
     mostrarMensaje('¡Se ha abierto tu cliente de correo! Si no se abrió, por favor envíame un email directamente a justin2266xd@gmail.com 📧', 'exito');
